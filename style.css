@@ -1,7 +1,15 @@
 body {
   background-color: #121213;
 }
-
+.juego {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+ }
+ 
 header {
   display: flex;
   justify-content: center;
@@ -31,6 +39,12 @@ header #titulo {
   font-style: normal;
   color: #d7dadc;
 }
+.palabra > p:nth-child(2) {
+  font-style: italic;
+  letter-spacing: 0.359em;
+  color: brown;
+ }
+ 
 
 #nuevaPalabra {
   display: block ruby;
@@ -58,7 +72,7 @@ header #titulo {
   border: 1px solid rgba(0, 0, 0, 0.2);
   display: block;
   padding: 0.5em;
-  width: 20%;
+  width: 28%;
   height: 20px;
   margin-left: auto;
   margin-right: auto;
