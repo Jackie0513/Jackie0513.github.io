@@ -40,18 +40,19 @@ function inicializarPalabra() {
 
   console.log("<<PALABRA A JUGAR>> " + palabra);
   console.log("Palabra Oculta >>> " + guionBajo);
-  document.querySelector("p").textContent = guionBajo;
+  document.getElementById("aciertos").textContent = guionBajo;
 }
 
 function verificarLetra(letra) {
   var letraCorrecta = false;
   var letra = letra.toUpperCase();
-  console.log("<< Funcion Verificar Letra >>");
-  console.log("Letra >> " + letra);
-  console.log("Indice letra >> " + palabra.indexOf(letra));
-  console.log("Conteiene letra (?) >> " + palabra.includes(letra));
+  //console.log("<< Funcion Verificar Letra >>");
+  //console.log("Letra >> " + letra);
+  //console.log("Indice letra >> " + palabra.indexOf(letra));
+  //console.log("Conteiene letra (?) >> " + palabra.includes(letra));
   if (palabra.includes(letra)) {
     letraCorrecta = true;
+    dibujarAcierto(letra);
   }
   return letraCorrecta;
 }
@@ -92,6 +93,31 @@ function jugar(Event) {
 //Finaliza la ejecucion del juego
 function finJuego() {
   window.removeEventListener("keyup", jugar);
+}
+
+//ciclo para recorrer y armar una palabra con los datos ingresados
+//Recorrer la palabra original y si el indice de letra existe usar
+//ese indice para introducir letras al string de la palabra secreta
+
+function dibujarAcierto(letra) {
+  let palabraAuxiliar = document.getElementById("aciertos").textContent;
+
+  for (index = 0; index < palabra.length; index++) {
+    if (letra == palabra[index]) {
+      palabraAuxiliar = reemplazarCaracter(palabraAuxiliar, index, letra);
+    }
+    document.getElementById("aciertos").textContent = palabraAuxiliar;
+  }
+
+  //var palabratest = "teclado";
+  //console.log(palabratest)
+
+  //console.log(palabratest.replace(palabratest.charAt(3),"A"));
+}
+
+function reemplazarCaracter(str, index, chr) {
+  if (index > str.length - 1) return str;
+  return str.substring(0, index) + chr + str.substring(index + 1);
 }
 
 //agregarPalabra("gato");
