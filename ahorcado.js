@@ -22,7 +22,7 @@ botonNuevoJuego.addEventListener("click", () => {
 
 window.addEventListener("keyup", jugar);
 
-//Agreaga palabra a la lista de palabras
+//Agreaga una nueva @palabra para jugar a la lista
 function agregarPalabra(palabra) {
   listaPalabras.push(palabra);
 
@@ -31,28 +31,27 @@ function agregarPalabra(palabra) {
 
 //Inicializa la palabra secreta a jugar
 function inicializarPalabra() {
-  palabra =
-    listaPalabras[Math.round(Math.random() * (listaPalabras.length - 1))];
+
+  palabra =listaPalabras[Math.round(Math.random() * (listaPalabras.length - 1))];
   var guionBajo = "";
   for (let index = 0; index < palabra.length; index++) {
     guionBajo += "_";
   }
 
   console.log("<<PALABRA A JUGAR>> " + palabra);
-  console.log("Palabra Oculta >>> " + guionBajo);
   document.getElementById("aciertos").textContent = guionBajo;
 }
 
 function verificarLetra(letra) {
   var letraCorrecta = false;
   var letra = letra.toUpperCase();
-  //console.log("<< Funcion Verificar Letra >>");
-  //console.log("Letra >> " + letra);
-  //console.log("Indice letra >> " + palabra.indexOf(letra));
-  //console.log("Conteiene letra (?) >> " + palabra.includes(letra));
+  
   if (palabra.includes(letra)) {
     letraCorrecta = true;
     dibujarAcierto(letra);
+  }
+  else{
+    dibujarError(letra);
   }
   return letraCorrecta;
 }
@@ -62,10 +61,15 @@ function jugar(Event) {
   //console.log(Event);
 
   if (Event.keyCode >= 65 && Event.keyCode <= 90) {
+    
+    var repite = document.getElementById("errores").textContent.includes(Event.key.toUpperCase());
     var letraCorrecta = verificarLetra(Event.key);
+    
+   
 
-    if (!letraCorrecta) {
+    if (!letraCorrecta && !repite) {
       intentos += 1;
+
 
       if (intentos == 1) {
         dibujarHorca();
@@ -86,6 +90,13 @@ function jugar(Event) {
         alert("HAZ PERDIDO!!!");
         finJuego();
       }
+    }
+    if (palabra == document.getElementById("aciertos").textContent) {
+
+      console.log(palabra+" == "+document.getElementById("aciertos").textContent);
+      finJuego();
+      alert("YOU WIN !!");
+      
     }
   }
 }
@@ -114,20 +125,28 @@ function dibujarAcierto(letra) {
 
   //console.log(palabratest.replace(palabratest.charAt(3),"A"));
 }
+function dibujarError(letra){
+  let palabraAuxiliar = document.getElementById("errores").textContent;
+  if (!palabraAuxiliar.includes(letra)) {
+     palabraAuxiliar += letra;
+  }
+  document.getElementById("errores").textContent = palabraAuxiliar;
+
+}
 
 function reemplazarCaracter(str, index, chr) {
   if (index > str.length - 1) return str;
   return str.substring(0, index) + chr + str.substring(index + 1);
 }
 
-//agregarPalabra("gato");
+
 
 //Capturar correctamente la letra ✓
 //Buscar letra en la palabra ✓
-//Dibujar Aciertos en pantalla
-//Dibujar Errores en pantalla
+//Dibujar Aciertos en pantalla ✓
+//Dibujar Errores en pantalla ✓
 //Dibujar la Horca ✓
-//Terminar Juego por derrota
-//Terminar Juego Por victoria
+//Terminar Juego por derrota ✓
+//Terminar Juego Por victoria ✓
 //Organizar Juego e inicializar juego o crear una funcion de Inicializacion
 //Agregar Nueva Palabra
