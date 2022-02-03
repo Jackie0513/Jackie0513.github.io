@@ -23,6 +23,18 @@ header #titulo {
   font-style: normal;
   font-size: 18px;
 }
+.palabra > p:nth-child(1) {
+  font-size: 19px;
+  line-height: 1;
+  letter-spacing: 0.236em;
+  font-weight: 600;
+  font-style: normal;
+  color: #d7dadc;
+}
+
+#nuevaPalabra {
+  display: block ruby;
+}
 
 .titulo {
   padding: 15px;
@@ -34,7 +46,7 @@ header #titulo {
   border: 0;
   color: white;
   font-weight: bold;
-  background-color: blue;
+  background-color: rgb(83, 141, 78);
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -46,8 +58,8 @@ header #titulo {
   border: 1px solid rgba(0, 0, 0, 0.2);
   display: block;
   padding: 0.5em;
-  width: 30%;
-  height: 50px;
+  width: 20%;
+  height: 20px;
   margin-left: auto;
   margin-right: auto;
 }

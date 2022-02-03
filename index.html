@@ -6,33 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Ahorcado</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header>
     <div id="titulo">AHORCADO</div>
   </header>
-  <div style="text-align:center; margin: 50px 0px;">
-   
 
-  </div>
-
-  <div style="text-align:center; display: none; ">
-    <button class="btn" id="iniciar-juego">INICIAR JUEGO</button>
-    <input class="text-input" type="text" id="input-nueva-palabra" placeholder="Escriba una nueva palabra">
-    <button class="btn" id="nueva-palabra">AGREGAR PALABRA</button>
-  </div>
-  <div style="text-align:center; " id="mycanvas">
+  <div style="text-align: center" id="mycanvas">
     <canvas id="ahorcado" height="400px" width="600px"></canvas>
   </div>
+  <div class="palabra" style="text-align: center;">
+    <p>Computadora</p>
+  </div>
+  <div style="text-align: center; margin: 50px 0px">
+    <button class="btn" id="iniciar-juego">Nuevo Juego</button>
+  </div>
 
- 
+  <div id="nuevaPalabra" style="text-align: center">
+    <input class="text-input" type="text" id="input-nueva-palabra" placeholder="Escriba una nueva palabra" />
+    <button class="btn" id="nueva-palabra">Agregar Palabra</button>
+  </div>
 
   <script type="text/javascript" src="canvas.js"></script>
   <script type="text/javascript" src="ahorcado.js"></script>
-
-
 </body>
 
 </html>

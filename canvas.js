@@ -33,9 +33,9 @@ canvasCtx.stroke();
 */
 function dibujarCabeza(){
 //2 cabeza
-canvasCtx.moveTo(425, 230);
+canvasCtx.moveTo(212, 115);
 canvasCtx.beginPath();
-canvasCtx.arc(425, 230, 50, 0, 2 * Math.PI);
+canvasCtx.arc(212, 115, 25, 0, 2 * Math.PI);
 canvasCtx.stroke();
 }
 
@@ -43,23 +43,23 @@ function dibujarTorso (){
 //3 torso
 
 canvasCtx.beginPath()
-canvasCtx.moveTo(425, 280);
-canvasCtx.lineTo(425,460);
+canvasCtx.moveTo(212, 140);
+canvasCtx.lineTo(212,230);
 canvasCtx.stroke();
 }
 function dibujarPiernaDerecha(){
 //4 pierna derecha
 canvasCtx.beginPath()
-canvasCtx.moveTo(425, 460);
-canvasCtx.lineTo(485,520);
+canvasCtx.moveTo(212, 230);
+canvasCtx.lineTo(242,260);
 canvasCtx.stroke();
 }
 
 function dibujarPiernaIzquierda(){
 //5 pierna izquierda
 canvasCtx.beginPath();
-canvasCtx.moveTo(425, 460);
-canvasCtx.lineTo(365,520);
+canvasCtx.moveTo(212, 230);
+canvasCtx.lineTo(182,260);
 canvasCtx.stroke();
 }
 
@@ -67,16 +67,16 @@ canvasCtx.stroke();
 function dibujarBrazoDerecho(){
 //6 brazo derecho
 canvasCtx.beginPath();
-canvasCtx.moveTo(425, 320);
-canvasCtx.lineTo(485,380);
+canvasCtx.moveTo(212, 160);
+canvasCtx.lineTo(242,190);
 canvasCtx.stroke();
 }
 
 function dibujarBrazoIzquierdo(){
 //7 breazo izquierdo
 canvasCtx.beginPath();
-canvasCtx.moveTo(425, 320);
-canvasCtx.lineTo(365,380);
+canvasCtx.moveTo(212, 160);
+canvasCtx.lineTo(182,190);
 canvasCtx.stroke();
 }
 
