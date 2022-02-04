@@ -46,6 +46,7 @@ function agregarPalabra(palabra) {
 
 //Inicializa la palabra secreta a jugar
 function inicializarPalabra() {
+  document.getElementById("errores").textContent = "";
   palabra =
     listaPalabras[Math.round(Math.random() * (listaPalabras.length - 1))];
   var guionBajo = "";
@@ -123,10 +124,6 @@ function dibujarAcierto(letra) {
     document.getElementById("aciertos").textContent = palabraAuxiliar;
   }
 
-  //var palabratest = "teclado";
-  //console.log(palabratest)
-
-  //console.log(palabratest.replace(palabratest.charAt(3),"A"));
 }
 
 //dibuja en pantalla si la letra es incorrecta
